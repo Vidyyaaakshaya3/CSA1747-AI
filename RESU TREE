@@ -1,0 +1,11 @@
+happy(X):-
+    pass(X),
+    lottery(X).
+pass(X):-
+    study(X).
+pass(X):-
+    lucky(X).
+study(john):-fail.
+lucky(john).
+lottery(X):-
+    lucky(X).
