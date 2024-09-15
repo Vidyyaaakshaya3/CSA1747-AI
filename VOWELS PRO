@@ -1,0 +1,10 @@
+vowel(a).
+vowel(e).
+vowel(i).
+vowel(o).
+vowel(u).
+count_vowels(List,Count):-
+    include(vowel,List,V),
+    length(V,Count).
+
+
