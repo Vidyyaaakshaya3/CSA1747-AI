@@ -1,0 +1,21 @@
+def ucs(g,start,goal):
+    openlist=[(start,0)]
+    v=set()
+    while openlist:
+        openlist.sort(key=lambda x:x[1])
+        node,cost=openlist.pop(0)
+        if node==goal:
+            return cost
+        if node not in v:
+            v.add(node)
+        for n,w in g[node]:
+            if n not in v:
+                newcost=cost+w
+                openlist.append((n,newcost))
+            
+g={
+    'A':[('B',2),('C',5)],
+    'B':[('A',2),('D',7)],
+    'C':[('D',8),('A',5)],
+    'D':[('B',2),('C',8)]  }
+print(ucs(g,'A','D'))
